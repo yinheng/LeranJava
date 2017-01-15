@@ -11,13 +11,14 @@ public class TestMethod {
     public static void m1() {
         System.out.print(2);
     }
+
     public static String m2() {
         String name = "Hello Kitty";
         return name;
     }
 
     public static void m3() {
-        for (int i =0; i < 100; i ++) {
+        for (int i = 0; i < 100; i++) {
 
         }
     }

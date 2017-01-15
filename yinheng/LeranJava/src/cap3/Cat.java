@@ -1,7 +1,7 @@
 package cap3;
 
 /**
- * Created by guohao4 on 2017/1/14.
+ * Learning static
  */
 public class Cat {
 
@@ -13,7 +13,7 @@ public class Cat {
 
     Cat(String name) {
         this.name = name;
-        sid ++;
+        sid++;
 
     }
 
@@ -27,6 +27,7 @@ public class Cat {
     }
 
     public static void main(String[] arg) {
+
         Cat mimi = new Cat("mimi");
         mimi.info();
 

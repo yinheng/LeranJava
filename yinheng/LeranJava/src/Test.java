@@ -45,7 +45,6 @@ class BirthDate {
 }
 
 
-
 public class Test {
 
     public static void main(String[] arg) {
@@ -56,7 +55,7 @@ public class Test {
 
         System.out.println(day);
 
-        BirthDate birthDate = new BirthDate(1,1,2017);
+        BirthDate birthDate = new BirthDate(1, 1, 2017);
         birthDate.print();
 
         test.change3(birthDate);
@@ -72,7 +71,7 @@ public class Test {
     }
 
     public void change2(BirthDate b) {
-        b = new BirthDate(2,2,2012);
+        b = new BirthDate(2, 2, 2012);
     }
 
     public void change3(BirthDate b) {

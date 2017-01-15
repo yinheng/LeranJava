@@ -15,7 +15,8 @@ public class TestOverride {
 
     }
 }
-class Pig extends  Animal {
+
+class Pig extends Animal {
     public void eat() {
         System.out.println("Pig eat");
     }

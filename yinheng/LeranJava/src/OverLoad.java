@@ -9,7 +9,7 @@ public class OverLoad {
         Apple apple2 = new Apple(2);
         apple2.info();
 
-        Apple apple3 = new Apple("red", 3,3.2f);
+        Apple apple3 = new Apple("red", 3, 3.2f);
         apple3.info();
 
         apple1.changeColor();
@@ -33,9 +33,9 @@ class Apple {
     }
 
     public Apple(int _size) {
-      color = "blue";
-      size = _size;
-      weight = 2.2f;
+        color = "blue";
+        size = _size;
+        weight = 2.2f;
     }
 
     public Apple(String color, int size, float weight) {

@@ -44,7 +44,7 @@ public class Point {
     }
 
     public void printSelf() {
-        String s =  "My type is Point{" +
+        String s = "My type is Point{" +
                 "my.x=" + x +
                 ", y=" + y +
                 ", z=" + z +
@@ -53,10 +53,10 @@ public class Point {
     }
 }
 
- class PointTest {
+class PointTest {
     public static void main(String[] arg) {
         // 1.
-        Point point = new Point(1,2,3);
+        Point point = new Point(1, 2, 3);
         point.printSelf();
 
         // 2.
@@ -71,4 +71,4 @@ public class Point {
         long dis = point.distance();
         System.out.println(dis);
     }
- }
+}

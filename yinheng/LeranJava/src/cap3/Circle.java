@@ -17,7 +17,8 @@ public class Circle {
         o = p;
         radius = 1.0;
     }
-    public Circle(Point p,double r) {
+
+    public Circle(Point p, double r) {
         o = p;
         radius = r;
     }
@@ -32,10 +33,9 @@ public class Circle {
     }
 
     public boolean contains(Point p) {
-        if((p.x - o.x) > 0 ) {
+        if ((p.x - o.x) > 0) {
             return true;
-        }
-        else
+        } else
             return false;
     }
 }

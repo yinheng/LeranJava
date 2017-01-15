@@ -6,14 +6,14 @@ import java.util.Objects;
 public class TestSwitch {
     public static void main(String... arg) {
         int i = 8;
-        switch(i){
+        switch (i) {
             case 8:
                 print(2);
                 break;
             case 3:
                 print(3);
             case 4:
-                print(4 );
+                print(4);
             default:
         }
     }
