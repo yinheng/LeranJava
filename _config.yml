@@ -89,9 +89,4 @@ service-worker: true
 
 
 # Friends
-friends: [
-    {
-        title: "NickAndroid",
-        href: "http://nickandroid.github.io"
-    }
-]
+friends: no
