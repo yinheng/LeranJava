@@ -5,4 +5,4 @@ author: Nick
 date:   2017-02-07 10:12:20 +0800
 categories: jekyll update
 ---
-CAP2.
+CAP1.
