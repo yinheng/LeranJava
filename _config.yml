@@ -16,7 +16,7 @@
 title: Java Leraning Tracement
 email: tornaco@163.com
 description: > # this means to ignore newlines until "baseurl:"
-  This is used for yinheng to trace the java learning progress.
+  JAVA学习笔记.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tornaco
