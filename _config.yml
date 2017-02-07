@@ -2,7 +2,7 @@
 title: Learning Java
 author: Nick
 SEOTitle: Learning Java
-header-img: img/home-bg.jpg
+header-img: img/home-bg-art.jpg
 email: tornaco@gmail.com
 description: "Description here"
 keyword: "nick"
@@ -70,7 +70,7 @@ ga_domain: no
 
 
 # Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
+sidebar: false                           # whether or not using Sidebar.
 sidebar-about-description: "Living with <br>goodness"
 sidebar-avatar: /img/avatar-nick.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
