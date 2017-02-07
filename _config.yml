@@ -16,10 +16,10 @@
 title: Java Leraning Tracement
 email: tornaco@163.com
 description: > # this means to ignore newlines until "baseurl:"
-  JAVA学习笔记.
+  This is a website to record progress and some misc things while learning j2se for yinheng.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: tornaco
+twitter_username: no
 github_username:  tornaco
 
 # Build settings
