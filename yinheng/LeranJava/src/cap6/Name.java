@@ -19,10 +19,12 @@ public class Name implements Comparable{
         return lastName;
     }
 
+    @Override
     public String toString() {
         return firstName + "," + lastName;
     }
 
+    @Override
     public boolean equals(Object obj) {
         if(obj instanceof Name) {
             Name name = (Name)obj;
@@ -33,10 +35,12 @@ public class Name implements Comparable{
 
     }
 
+    @Override
     public int hashCode() {
         return firstName.hashCode();
     }
 
+    @Override
     public int compareTo(Object o) {
         Name n = (Name)o;
         int lastcmp = lastName.compareTo(n.lastName);
