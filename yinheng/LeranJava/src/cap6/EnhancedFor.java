@@ -6,7 +6,7 @@ import java.util.HashSet;
 /**
  * Learning
  */
-public class EnhansedFor {
+public class EnhancedFor {
     public static void main(String[] args) {
         Collection c = new HashSet();
         c.add(new String("aaa"));

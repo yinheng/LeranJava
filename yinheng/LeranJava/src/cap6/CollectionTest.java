@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * Learning
  */
-public class Conllection {
+public class CollectionTest {
 
     int a;
 
