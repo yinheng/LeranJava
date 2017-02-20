@@ -8,11 +8,12 @@ import java.util.Map;
  */
 public class MapTest {
     public static void main(String[] args) {
-        Map m1 = new HashMap();
+        Map<String, Integer> m1 = new HashMap<String, Integer>();
         Map m2 = new HashMap();
         m1.put("one", new Integer(1));
         m1.put("two", new Integer(2));
         m1.put("three", new Integer(3));
+        m1.put("four", 4);
         m2.put("A", new Integer(1));
         m2.put("B", new Integer(2));
         m2.put("C",3);
@@ -22,6 +23,7 @@ public class MapTest {
         System.out.println(m1.containsValue(new Integer(2)));
         if(m1.containsKey("two")) {
             System.out.println(((Integer)m1.get("two")).intValue());
+            System.out.println(m1.get("four"));
             System.out.println((Integer) m1.get("two"));
         }
         Map m3 = new HashMap(m1);

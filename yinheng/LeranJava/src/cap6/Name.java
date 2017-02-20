@@ -3,7 +3,7 @@ package cap6;
 /**
  * Learning
  */
-public class Name implements Comparable{
+public class Name implements Comparable<Name>{
     private String firstName, lastName;
 
     public Name(String firstName,String lastName) {
@@ -41,8 +41,8 @@ public class Name implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        Name n = (Name)o;
+    public int compareTo(Name o) {
+        Name n = o;
         int lastcmp = lastName.compareTo(n.lastName);
         return
                 (lastcmp !=0 ? lastcmp : firstName.compareTo(n.firstName));
