@@ -9,7 +9,7 @@ public class TestMethod {
     }
 
     public static void m1() {
-        System.out.print(2);
+        System.err.println(2);
     }
 
     public static String m2() {

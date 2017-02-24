@@ -8,6 +8,7 @@ import java.io.IOException;
  * Learning
  */
 public class TestFileInputStream {
+
     public static void main(String[] args) {
         int b = 0;
         FileInputStream in = null;
