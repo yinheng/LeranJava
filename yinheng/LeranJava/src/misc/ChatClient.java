@@ -1,10 +1,5 @@
 package misc;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -12,20 +7,30 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Date;
 
-public class ChatClient extends Frame {
+public class ChatClient {
 
-    TextField tf = new TextField();
+    private ClientUI mUI;
 
-    TextArea ta = new TextArea();
+    private DataOutputStream mDos;
 
-    DataOutputStream dos;
+    private String mClientId = ClientIdFactory.getNextId();
+
+    public ChatClient() {
+        mUI = new ClientUI(mClientId) {
+            @Override
+            public void onEnter() {
+                super.onEnter();
+                ChatClient.this.onEnter();
+            }
+        };
+    }
 
     public static void main(String[] args) {
         new ChatClient().startClient();
     }
 
     public void startClient() {
-        launchFrame();
+        mUI.launch();
         try {
             startTcp();
         } catch (Exception e) {
@@ -33,14 +38,17 @@ public class ChatClient extends Frame {
         }
     }
 
-    private void startTcp() throws Exception{
+    private void startTcp() throws Exception {
         Socket s = new Socket("127.0.0.1", 6666);
 
         OutputStream os = s.getOutputStream();
-        dos = new DataOutputStream(os);
+        mDos = new DataOutputStream(os);
 
         onConnectedToServer(s);
         DataInputStream dis = new DataInputStream(s.getInputStream());
+
+        // Say user name to server
+        mDos.writeUTF(mClientId);
 
         while (true) {
             String received = dis.readUTF();
@@ -48,77 +56,31 @@ public class ChatClient extends Frame {
         }
     }
 
-    public void launchFrame() {
-        setLocation(400, 300);
-        setSize(300, 300);
-        add(tf, BorderLayout.SOUTH);
-        add(ta, BorderLayout.NORTH);
-        this.pack();
-        setTitle("Client");
-
-        addWindowListener(new WindowAdapter() {
-
-            public void windowClosing(WindowEvent arg0) {
-                System.out.println("Closing");
-
-                try {
-                    dos.flush();
-                    dos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                System.exit(0);
-            }
-        });
-
-        tf.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent action) {
-                onEnter();
-            }
-        });
-        setVisible(true);
-    }
-
     private void onMesssageReceived(String msg) {
-        StringBuffer sb = new StringBuffer(ta.getText());
+        StringBuffer sb = mUI.getDisplayText();
         sb.append("\n");
-        sb.append("<-------");
         sb.append(msg);
         sb.append("\t");
         sb.append(new Date());
-
-        ta.setText(sb.toString());
+        mUI.setDisplayText(sb.toString());
     }
 
     private void onEnter() {
-
-        StringBuffer sb = new StringBuffer(ta.getText());
-        sb.append("\n");
-        sb.append("------>");
-        sb.append(tf.getText());
-        sb.append("\t");
-        sb.append(new Date());
-
-        ta.setText(sb.toString());
-
         // Send out
         try {
-            dos.writeUTF(tf.getText());
+            mDos.writeUTF(mUI.getEditText().trim());
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        tf.setText("");
+        mUI.clearEdit();
     }
 
     private void onConnectedToServer(Socket socket) {
         String ipInfo = socket.getInetAddress().getHostName();
-        StringBuilder stringBuilder = new StringBuilder(ta.getText());
-        stringBuilder.append("\n");
-        stringBuilder.append("服务器连接上了：" + ipInfo + "\t" + new Date());
-        ta.setText(stringBuilder.toString());
+        StringBuilder stringBuilder = new StringBuilder(mUI.getDisplayText());
+        stringBuilder.append("服务器连接上了：").append(ipInfo).append("\t").append(new Date());
+        mUI.setDisplayText(stringBuilder.toString());
     }
 
 }
