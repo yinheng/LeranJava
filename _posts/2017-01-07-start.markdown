@@ -1,8 +1,0 @@
----
-layout: post
-title:  "开始"
-author: Nick
-date:   2017-01-07 11:11:50 +0800
-categories: jekyll update
----
-如题.
