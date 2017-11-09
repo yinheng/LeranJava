@@ -1,7 +1,7 @@
 package cap3.com.polymoph;
 
 /**
- * Learning
+ * Learning 多态
  */
 public class TestPolymoph {
     public static void main(String[] args) {
